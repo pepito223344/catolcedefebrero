@@ -1,0 +1,208 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pa keysha</title>
+        <style>
+            /* Estilos Base */
+        body {
+                text-align: center;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh; /* Cambiado de height a min-height */
+                margin: 0;
+                overflow-y: auto;  /* Permite scroll vertical */
+                overflow-x: hidden; /* Evita scroll horizontal */
+                padding: 20px 0;
+            }
+            
+
+            .contenedor {
+                background: rgba(255, 255, 255, 0.9);
+                padding: 40px;
+                border-radius: 30px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+                max-width: 450px;
+                width: 90%;
+                transition: all 0.5s ease;
+            }
+
+            h1 { color: #d63384; margin-bottom: 20px; font-size: 2em; }
+
+            .botones {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                height: 120px; 
+                align-items: center;
+                position: relative;
+            }
+
+            /* Estilo unificado para ambos botones */
+            .btn-si, .btn-no {
+                width: 120px; /* Ancho fijo igual para ambos */
+                height: 50px; /* Alto fijo igual para ambos */
+                font-size: 18px;
+                font-weight: bold;
+                border-radius: 50px;
+                cursor: pointer;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.2s, background-color 0.2s;
+            }
+
+            .btn-si {
+                background-color: #ff477e;
+                color: white;
+                box-shadow: 0 5px 15px rgba(255, 71, 126, 0.4);
+                z-index: 1;
+            }
+
+            .btn-si:hover { transform: scale(1.1); background-color: #ff0a54; }
+
+            .btn-no {
+                background-color: #6c757d;
+                color: white;
+                position: relative; 
+                z-index: 2;
+            }
+
+            /* DISEÑO DE LA CARTA */
+            #pantalla-exito {
+                display: none;
+                background: #fff9f9;
+                border: 2px solid #ffccd5;
+                padding: 50px 30px;
+                text-align: left;
+                position: relative;
+
+            }
+
+        #pantalla-exito::before {
+                content: ""; /* Quitamos el emoji */
+                position: absolute;
+                top: -40px; /* Ajustamos la altura */
+                left: 50%;
+                transform: translateX(-50%); /* Esto lo centra perfecto */
+                width: 80px; /* Ancho de tu imagen */
+                height: 80px; /* Alto de tu imagen */
+                background-image: url('IMG_4988.jpg'); /* Pon aquí el link o nombre del archivo */
+                background-size: cover;
+                background-position: center;
+                border-radius: 50%; /* Opcional: hace la imagen circular */
+                border: 3px solid white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+            
+            }
+
+            .titulo-carta {
+                font-size: 24px;
+                color: #d63384;
+                text-align: center;
+                border-bottom: 1px solid #ffccd5;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            .texto-carta {
+                font-size: 18px;
+                color: #4a4a4a;
+                line-height: 1.8;
+                font-style: italic;
+            }
+
+            .firma {
+                text-align: right;
+                margin-top: 30px;
+                font-weight: bold;
+                color: #ff477e;
+                font-size: 20px;
+            }
+
+            .gif-celebracion {
+                width: 100%;
+                border-radius: 15px;
+                margin-top: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="pantalla-pregunta" class="contenedor">
+            <div style="font-size: 60px;">😁</div>
+            <h1>¿Quieres sel mi San Valentín?</h1>
+            
+            <div class="botones">
+                <button class="btn-si" onclick="aceptar()">SÍ </button>
+                <button id="btnNo" class="btn-no" onmouseover="moverBoton(this)">No</button>
+            </div>
+        </div>
+
+        <div id="pantalla-exito" class="contenedor">
+
+
+            <img src="gatolol.jpg" style="
+        width: 100px; 
+        position: absolute; 
+        top: -10px; 
+        right: -10px; 
+        transform: rotate(10deg); 
+        filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+        z-index: 100;
+    ">
+
+            <div class="titulo-carta">Para Keysha Michelle </div>
+            
+            <div class="texto-carta">
+                <p>ola, honestamente no tenía ni idea de si hacer algo para el 14 o si hacía algo no sabía qué, pero me puse a inventar a ver qué salía y pues te dejo este detallito para decirte que me gustas y que te quiero, aunque tú lo sepas.
+
+De verdad que me gusta pasar tiempo contigo y, sobre todo, tu forma de ser y de aguantar absolutamente toda la mielda que yo digo y hago. Pero en fin, un mensaje cortito para darte algo en este día.</p>
+                
+            </div>
+
+            <div class="firma">Con amol, <br> Alber</div>
+
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExemlqOWE0b3dpdjZjbmI1eXdiczRoYnRyZjFoeDR6eXdpZTdlbnByMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Gpqk76tiVKjn2/giphy.gif" class="gif-celebracion">
+        </div>
+
+        <script>
+
+    function moverBoton(boton) {
+                boton.style.position = "fixed"; /* Mantiene el botón siempre visible en pantalla */
+                const x = Math.random() * (window.innerWidth - 120);
+                const y = Math.random() * (window.innerHeight - 50);
+                
+                boton.style.left = x + "px";
+                boton.style.top = y + "px";
+            }
+
+            function aceptar() {
+                document.getElementById('pantalla-pregunta').style.display = 'none';
+                const exito = document.getElementById('pantalla-exito');
+                exito.style.display = 'block';
+                
+                exito.style.opacity = 0;
+                setTimeout(() => { exito.style.opacity = 1; }, 50);
+            }
+
+            function moverBoton(boton) {
+                boton.style.position = "fixed";
+                const padding = 100;
+                const x = Math.random() * (window.innerWidth - padding * 2) + padding;
+                const y = Math.random() * (window.innerHeight - padding * 2) + padding;
+                
+                boton.style.left = x + "px";
+                boton.style.top = y + "px";
+            }
+        </script>
+
+    </body>
+    </html>
